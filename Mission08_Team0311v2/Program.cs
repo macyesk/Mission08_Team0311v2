@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Mission08_Team0311.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
