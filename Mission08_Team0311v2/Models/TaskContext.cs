@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Mission08_Team0311v2.Models;
 
-namespace Mission08_Team0311.Models;
+namespace Mission08_Team0311v2.Models;
 
 public class TaskContext :DbContext
 {
@@ -9,6 +10,6 @@ public class TaskContext :DbContext
         
     }
     
-    public DbSet<Task> Tasks { get; set; }
+    public DbSet<TaskItem> Tasks { get; set; }
     public DbSet<Category> Categories { get; set; }
 }
