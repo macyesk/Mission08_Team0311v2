@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Mission08_Team0311.Models;
+namespace Mission08_Team0311v2.Models;
 
-public class Task
+public class TaskItem
 {
     [Key]
     public int TaskId { get; set; }
