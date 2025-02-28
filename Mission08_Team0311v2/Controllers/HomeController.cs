@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Mission08_Team0311v2.Models;
 
@@ -6,26 +7,43 @@ namespace Mission08_Team0311v2.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ITaskRepository _repo;
 
-    public HomeController(ILogger<HomeController> logger)
+    // Constructor injection of the repository
+    public HomeController(ITaskRepository repo)
     {
-        _logger = logger;
+        _repo = repo;
     }
-
     public IActionResult Index()
     {
-        return View();
-    }
+        // tasks may be null
+        List<TaskItem> ? tasks = _repo.Tasks;
 
-    public IActionResult Privacy()
-    {
-        return View();
+        // Return the view with the tasks model
+        return View(tasks);
     }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [HttpGet]
+    public IActionResult CreateTask(TaskItem task)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        List<Category> ? categories = _repo.Categories;
+        ViewBag.Categories = categories;
+        return View(task ?? new TaskItem());
+    }
+    [HttpPost]
+    public IActionResult AddTask(TaskItem task)
+    {
+        _repo.AddTask(task);
+        // Redirect to the Index action after adding the task
+        return RedirectToAction("Index");
+    }
+    public IActionResult UpdateTask(TaskItem task)
+    {
+        _repo.UpdateTask(task);
+        return RedirectToAction("Index");
+    }
+    public IActionResult DeleteTask(int taskId)
+    {
+        _repo.DeleteTask(taskId);
+        return RedirectToAction("Index");
     }
 }

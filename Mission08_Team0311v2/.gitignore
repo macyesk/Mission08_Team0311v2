@@ -1,0 +1,7 @@
+﻿# Ignore build files
+bin/
+obj/
+
+# Ignore IDE files
+.vs/
+*.user
