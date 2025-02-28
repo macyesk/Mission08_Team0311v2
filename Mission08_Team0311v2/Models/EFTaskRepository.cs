@@ -13,7 +13,39 @@ public class EFTaskRepository : ITaskRepository
         _context = temp;
     }
 
-    public List<TaskItem> Tasks => _context.Tasks.ToList();
+    public List<TaskItem> Tasks
+{
+    get
+    {
+        var tasks = _context.Tasks.ToList(); // Fetch tasks from the database
+
+        // Check if tasks are empty and add test data for development purposes
+        if (!tasks.Any())
+        {
+                tasks.Add(new TaskItem
+                {
+                    TaskId = 1,
+                    TaskName = "Dummy Data Task",
+                    DueDate = "2025-03-01",
+                    Quadrant = 1,
+                    Completed = 0,
+                    CategoryId = 1
+                });
+
+                tasks.Add(new TaskItem
+                {
+                    TaskId = 2,
+                    TaskName = "Dummy Task 2",
+                    DueDate = "2025-03-05",
+                    Quadrant = 2,
+                    Completed = 0,
+                    CategoryId = 1
+                });
+            }
+
+        return tasks;
+    }
+}
     public List<Category> Categories => _context.Categories.ToList();
     
     public void AddTask(TaskItem task)

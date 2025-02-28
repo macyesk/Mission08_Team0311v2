@@ -22,17 +22,28 @@ public class HomeController : Controller
         // Return the view with the tasks model
         return View(tasks);
     }
-    public IActionResult CreateTask()
+    [HttpGet]
+    public IActionResult CreateTask(TaskItem task)
     {
         List<Category> ? categories = _repo.Categories;
         ViewBag.Categories = categories;
-        return View(new TaskItem());
+        return View(task ?? new TaskItem());
     }
     [HttpPost]
-    public IActionResult CreateTask(TaskItem task)
+    public IActionResult AddTask(TaskItem task)
     {
         _repo.AddTask(task);
         // Redirect to the Index action after adding the task
+        return RedirectToAction("Index");
+    }
+    public IActionResult UpdateTask(TaskItem task)
+    {
+        _repo.UpdateTask(task);
+        return RedirectToAction("Index");
+    }
+    public IActionResult DeleteTask(int taskId)
+    {
+        _repo.DeleteTask(taskId);
         return RedirectToAction("Index");
     }
 }

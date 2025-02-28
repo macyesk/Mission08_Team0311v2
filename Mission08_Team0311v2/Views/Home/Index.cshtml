@@ -21,9 +21,8 @@
             @foreach (var task in Model.Where(t => t.Quadrant == 1))
             {
                 <div class="task-item">
-                    <a href="@Url.Action("CreateTask", "Home", new { id = task.TaskId })">
-                        <p>@task.TaskName</p>
-                        <p>Due: @task.DueDate</p>
+                    <a href="@Url.Action("CreateTask", "Home", task)" class="text-decoration-none">
+                        <p>@task.TaskName Due: @task.DueDate</p>
                     </a>
                 </div>
             }
@@ -33,9 +32,8 @@
             @foreach (var task in Model.Where(t => t.Quadrant == 2))
             {
                 <div class="task-item">
-                    <a href="@Url.Action("CreateTask", "Home", new { id = task.TaskId })">
-                        <p>@task.TaskName</p>
-                        <p>Due: @task.DueDate</p>
+                    <a href="@Url.Action("CreateTask", "Home", task)">
+                        <p>@task.TaskName Due: @task.DueDate</p>
                     </a>
                 </div>
             }
@@ -50,9 +48,8 @@
             @foreach (var task in Model.Where(t => t.Quadrant == 3))
             {
                 <div class="task-item">
-                    <a href="@Url.Action("CreateTask", "Home", new { id = task.TaskId })">
-                        <p>@task.TaskName</p>
-                        <p>Due: @task.DueDate</p>
+                    <a href="@Url.Action("CreateTask", "Home", task)">
+                        <p>@task.TaskName Due: @task.DueDate</p>
                     </a>
                 </div>
             }
@@ -62,9 +59,8 @@
             @foreach (var task in Model.Where(t => t.Quadrant == 4))
             {
                 <div class="task-item">
-                    <a href="@Url.Action("CreateTask", "Home", new { id = task.TaskId })">
-                        <p>@task.TaskName</p>
-                        <p>Due: @task.DueDate</p>
+                    <a href="@Url.Action("CreateTask", "Home", task)">
+                        <p>@task.TaskName Due: @task.DueDate</p>
                     </a>
                 </div>
             }
