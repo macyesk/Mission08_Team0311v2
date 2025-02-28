@@ -1034,19 +1034,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/macyeskelsen/.nuget/packages/": {}
+    "/Users/kyleebrown/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macyeskelsen/RiderProjects/Mission08_Team0311v2/Mission08_Team0311v2/Mission08_Team0311v2.csproj",
+      "projectUniqueName": "/Users/kyleebrown/Documents/GitHub/Mission08_Team0311v2/Mission08_Team0311v2/Mission08_Team0311v2.csproj",
       "projectName": "Mission08_Team0311v2",
-      "projectPath": "/Users/macyeskelsen/RiderProjects/Mission08_Team0311v2/Mission08_Team0311v2/Mission08_Team0311v2.csproj",
-      "packagesPath": "/Users/macyeskelsen/.nuget/packages/",
-      "outputPath": "/Users/macyeskelsen/RiderProjects/Mission08_Team0311v2/Mission08_Team0311v2/obj/",
+      "projectPath": "/Users/kyleebrown/Documents/GitHub/Mission08_Team0311v2/Mission08_Team0311v2/Mission08_Team0311v2.csproj",
+      "packagesPath": "/Users/kyleebrown/.nuget/packages/",
+      "outputPath": "/Users/kyleebrown/Documents/GitHub/Mission08_Team0311v2/Mission08_Team0311v2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/macyeskelsen/.nuget/NuGet/NuGet.Config"
+        "/Users/kyleebrown/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1103,7 +1103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
