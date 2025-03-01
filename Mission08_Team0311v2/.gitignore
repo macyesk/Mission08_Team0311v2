@@ -6,22 +6,9 @@ obj/
 .vs/
 .idea/
 *.user
-*.suo
-*.cache
-*.ldb
 
-# Ignore Rider (JetBrains) specific files
-*.iml
-/.idea/
-/*.sln.iml
-/.Rider*
+echo -e "\n# Ignore build artifacts\nobj/" >> .gitignore
+git add .gitignore
+git commit -m "Updated .gitignore to ignore build artifacts"
 
-# Ignore database files
-timemanagement.db
-*.db-shm
-*.db-wal
 
-# Ignore dependency caches
-project.lock.json
-*.nuget.props
-*.nuget.targets
