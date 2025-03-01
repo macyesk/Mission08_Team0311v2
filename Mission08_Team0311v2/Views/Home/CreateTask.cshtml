@@ -7,8 +7,12 @@
 <div class="row">
     <div class="col-7"> 
         <form method="post" class="form-floating" asp-action=@((Model.TaskId == 0) ? "AddTask" : "UpdateTask")>
+            @if(Model.TaskId != 0)
+            {
+                <label asp-for="TaskId"></label>
+                <input asp-for="TaskId" readonly/>
 
-            <label type="hidden" asp-for="TaskId"></label>
+            }
             <br/>
             <label asp-for="TaskName">Task</label>
             <input asp-for="TaskName"/>
@@ -16,8 +20,8 @@
             <label asp-for="DueDate">Due Date</label>
             <input asp-for="DueDate"/>
             <br/>
-            <label asp-for="Quadrant">Quadrant</label>
-            <input asp-for="Quadrant">
+            <label asp-for="Quadrant" >Quadrant</label>
+            <input asp-for="Quadrant" min="1" max="4" >
             <br/>
             <select asp-for="CategoryId">
                 <option value="">Select a Category</option>

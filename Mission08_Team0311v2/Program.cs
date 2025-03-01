@@ -4,6 +4,9 @@ using Mission08_Team0311v2.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Ensure UseWebRoot() uses a relative path
+builder.WebHost.UseWebRoot("wwwroot");  // This ensures a relative path is used for static files
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
