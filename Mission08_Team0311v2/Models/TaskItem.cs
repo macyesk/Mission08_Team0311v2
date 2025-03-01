@@ -12,7 +12,7 @@ public class TaskItem
     public string DueDate { get; set; }
     [Required]
     public int Quadrant { get; set; }
-    public int Completed { get; set; }
+    public int Complete { get; set; }
     public int CategoryId { get; set; }
     [ForeignKey("CategoryId")]
     public Category Category { get; set; }
