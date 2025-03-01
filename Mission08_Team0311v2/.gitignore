@@ -1,7 +1,27 @@
-﻿# Ignore build files
+﻿# Ignore build and output files
 bin/
 obj/
 
-# Ignore IDE files
+# Ignore IDE-specific files
 .vs/
+.idea/
 *.user
+*.suo
+*.cache
+*.ldb
+
+# Ignore Rider (JetBrains) specific files
+*.iml
+/.idea/
+/*.sln.iml
+/.Rider*
+
+# Ignore database files
+timemanagement.db
+*.db-shm
+*.db-wal
+
+# Ignore dependency caches
+project.lock.json
+*.nuget.props
+*.nuget.targets
