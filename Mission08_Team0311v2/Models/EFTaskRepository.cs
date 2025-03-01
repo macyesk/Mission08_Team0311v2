@@ -13,7 +13,7 @@ public class EFTaskRepository : ITaskRepository
         _context = temp;
     }
     
-    public List<TaskItem> Tasks => _context.Tasks.ToList();
+    public List<TaskItem> Tasks => _context.Tasks.Where(x => x.Complete == 0).ToList();
     public List<Category> Categories => _context.Categories.ToList();
     
     public void AddTask(TaskItem task)
