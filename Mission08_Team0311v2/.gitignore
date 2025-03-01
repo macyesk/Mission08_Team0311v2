@@ -7,8 +7,5 @@ obj/
 .idea/
 *.user
 
-echo -e "\n# Ignore build artifacts\nobj/" >> .gitignore
-git add .gitignore
-git commit -m "Updated .gitignore to ignore build artifacts"
 
 
