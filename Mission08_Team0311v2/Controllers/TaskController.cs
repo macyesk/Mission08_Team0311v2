@@ -21,7 +21,7 @@ namespace Mission08_Team0311v2.Controllers
         public IActionResult Index()
         {
             // Only show tasks that are not completed 
-            var tasks = _taskRepo.Tasks.Where(t => t.Completed == 0).ToList();
+            var tasks = _taskRepo.Tasks.Where(t => t.Complete == 0).ToList();
             return View(tasks);
         }
 
@@ -109,7 +109,7 @@ namespace Mission08_Team0311v2.Controllers
             {
                 return NotFound();
             }
-            task.Completed = 1;  // Mark task as completed.
+            task.Complete = 1;  // Mark task as completed.
             _context.Tasks.Update(task);
             _context.SaveChanges();
             return RedirectToAction("Index");
